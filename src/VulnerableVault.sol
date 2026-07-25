@@ -13,7 +13,7 @@ contract VulnerableVault {
         uint256 balance = balances[msg.sender];
         require(balance > 0, "No balance to withdraw");
 
-        (bool success, ) = msg.sender.call{value: balance}("");
+        (bool success,) = msg.sender.call{value: balance}("");
         require(success, "Transfer failed");
 
         // BUG
