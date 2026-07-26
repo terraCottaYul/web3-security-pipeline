@@ -10,27 +10,7 @@ This repository intentionally contains a **Vulnerable Vault** contract to showca
 
 The workflow file located at `.github/workflows/test.yml` acts as an automated quality-and-security fence on every commit and Pull Request. It executes the following 4 stages sequentially:
 
-[ Push / PR ]
-│
-▼
-┌──────────────┐
-│ Forge Fmt │ ──► Enforces strict styling & readability standards
-└──────────────┘
-│
-▼
-┌──────────────┐
-│ Forge Build │ ──► Compiles bytecode & enforces EIP-170 contract size checks (<24KB)
-└──────────────┘
-│
-▼
-┌──────────────┐
-│ Forge Test │ ──► Runs functional unit tests & Proof-of-Concept (PoC) exploit scripts
-└──────────────┘
-│
-▼
-┌──────────────┐
-│ Slither Scan │ ──► Deep static analysis; blocks the pipeline on Medium/High flaws
-└──────────────┘
+[ Push / PR ] ──► │ Forge Fmt │ ──► │ Forge Build │ ──► | Forge Test │ ──► │ Slither Scan │
 
 ---
 
